@@ -232,13 +232,11 @@
     position:relative; border-radius:20px; overflow:hidden;
     aspect-ratio:4/3; cursor:pointer;
   }
-  .gallery-item .img-placeholder {
-    width:100%; height:100%;
-    background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(168,85,247,.1));
-    display:flex; align-items:center; justify-content:center;
-    font-size:40px; transition:transform .6s cubic-bezier(.4,0,.2,1);
+  .gallery-item img {
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .6s cubic-bezier(.4,0,.2,1);
   }
-  .gallery-item:hover .img-placeholder { transform:scale(1.08); }
+  .gallery-item:hover img { transform:scale(1.08); }
   .gallery-overlay {
     position:absolute; inset:0;
     background:linear-gradient(0deg,rgba(10,10,15,.9) 0%,transparent 60%);
@@ -506,8 +504,8 @@
   #gallery .gallery-item {
     box-shadow:0 4px 24px rgba(251,146,60,.06);
   }
-  #gallery .gallery-item .img-placeholder {
-    background:linear-gradient(135deg,rgba(251,146,60,.18),rgba(236,72,153,.12));
+  #gallery .gallery-item img {
+    filter:sepia(.1) saturate(1.05);
   }
   #gallery .gallery-overlay {
     background:linear-gradient(0deg,rgba(20,10,5,.92) 0%,rgba(40,15,5,.2) 40%,transparent 65%);
@@ -930,45 +928,45 @@
   <p class="section-subtitle reveal">研途有你，温暖同行</p>
   <div class="gallery-grid">
     <div class="gallery-item reveal reveal-delay-1">
-      <div class="img-placeholder">🎉</div>
+      <img src="图片记录/2026-03-28钟山体育公园烧烤(2025级).jpg" alt="钟山体育公园烧烤" loading="lazy">
       <div class="gallery-overlay">
-        <h4>2024年终聚会</h4>
-        <span>欢乐时光</span>
+        <h4>钟山体育公园烧烤</h4>
+        <span>2025级 · 2026.03.28</span>
       </div>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <div class="img-placeholder">🏀</div>
+      <img src="图片记录/2026-03-28钟山体育公园烧烤(2025级)(1).jpg" alt="钟山体育公园烧烤" loading="lazy">
       <div class="gallery-overlay">
-        <h4>篮球友谊赛</h4>
-        <span>热血拼搏</span>
+        <h4>钟山体育公园烧烤</h4>
+        <span>2025级 · 2026.03.28</span>
       </div>
     </div>
     <div class="gallery-item reveal reveal-delay-3">
-      <div class="img-placeholder">🏕️</div>
+      <img src="图片记录/2026-03-28钟山体育公园烧烤(2025级)(2).jpg" alt="钟山体育公园烧烤" loading="lazy">
       <div class="gallery-overlay">
-        <h4>户外团建</h4>
-        <span>亲近自然</span>
+        <h4>钟山体育公园烧烤</h4>
+        <span>2025级 · 2026.03.28</span>
       </div>
     </div>
     <div class="gallery-item reveal reveal-delay-4">
-      <div class="img-placeholder">🎓</div>
+      <img src="图片记录/2026-03-28钟山体育公园烧烤(2025级)(3).jpg" alt="钟山体育公园烧烤" loading="lazy">
       <div class="gallery-overlay">
-        <h4>毕业季</h4>
-        <span>前程似锦</span>
+        <h4>钟山体育公园烧烤</h4>
+        <span>2025级 · 2026.03.28</span>
       </div>
     </div>
     <div class="gallery-item reveal reveal-delay-1">
-      <div class="img-placeholder">🍽️</div>
+      <img src="图片记录/2026-03-28钟山体育公园烧烤(2025级)(4).jpg" alt="钟山体育公园烧烤" loading="lazy">
       <div class="gallery-overlay">
-        <h4>聚餐时光</h4>
-        <span>美食相伴</span>
+        <h4>钟山体育公园烧烤</h4>
+        <span>2025级 · 2026.03.28</span>
       </div>
     </div>
     <div class="gallery-item reveal reveal-delay-2">
-      <div class="img-placeholder">🏆</div>
+      <img src="图片记录/2026-05-22市井川菜聚餐(2025级).jpg" alt="市井川菜聚餐" loading="lazy">
       <div class="gallery-overlay">
-        <h4>学术竞赛</h4>
-        <span>荣誉时刻</span>
+        <h4>市井川菜聚餐</h4>
+        <span>2025级 · 2026.05.22</span>
       </div>
     </div>
   </div>
