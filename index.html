@@ -440,17 +440,21 @@
   #people .dist-bar-wrap {
     flex:1; height:28px; background:rgba(20,184,166,.06);
     border-radius:14px; overflow:hidden; position:relative;
+    display:flex; align-items:center;
   }
   #people .dist-bar-fill {
-    height:100%; border-radius:14px; position:relative;
+    height:100%; border-radius:14px;
     transition:width 1.2s cubic-bezier(.4,0,.2,1);
-    display:flex; align-items:center; padding-left:14px;
-    font-size:12px; font-weight:600; letter-spacing:1px;
+    position:absolute; left:0; top:0;
   }
-  #people .dist-bar-fill.private { background:linear-gradient(90deg,rgba(59,130,246,.5),rgba(6,182,212,.6)); color:#e0f7ff; }
-  #people .dist-bar-fill.state { background:linear-gradient(90deg,rgba(245,158,11,.5),rgba(251,146,60,.6)); color:#fff7ed; }
-  #people .dist-bar-fill.academic { background:linear-gradient(90deg,rgba(16,185,129,.5),rgba(20,184,166,.6)); color:#ccfbf1; }
-  #people .dist-bar-fill.huawei { background:linear-gradient(90deg,rgba(239,68,68,.5),rgba(251,146,60,.5)); color:#fff7ed; }
+  #people .dist-bar-fill.private { background:linear-gradient(90deg,rgba(59,130,246,.5),rgba(6,182,212,.6)); }
+  #people .dist-bar-fill.state { background:linear-gradient(90deg,rgba(245,158,11,.5),rgba(251,146,60,.6)); }
+  #people .dist-bar-fill.academic { background:linear-gradient(90deg,rgba(16,185,129,.5),rgba(20,184,166,.6)); }
+  #people .dist-bar-fill.huawei { background:linear-gradient(90deg,rgba(239,68,68,.5),rgba(251,146,60,.5)); }
+  #people .dist-count {
+    font-size:12px; font-weight:600; letter-spacing:1px; padding-left:14px;
+    position:relative; z-index:1;
+  }
   /* Alumni type badge */
   #people .type-dot {
     display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:4px; vertical-align:middle;
@@ -676,15 +680,15 @@
         <h3>去向单位性质分布</h3>
         <div class="dist-row">
           <div class="dist-label">民企/外企</div>
-          <div class="dist-bar-wrap"><div class="dist-bar-fill private" style="width:0%" data-width="72%">29人 · 72%</div></div>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill private" style="width:0%" data-width="72%"></div><div class="dist-count" style="color:#e0f7ff;">29人 · 72%</div></div>
         </div>
         <div class="dist-row">
           <div class="dist-label">央国企/研究所</div>
-          <div class="dist-bar-wrap"><div class="dist-bar-fill state" style="width:0%" data-width="20%">8人 · 20%</div></div>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill state" style="width:0%" data-width="20%"></div><div class="dist-count" style="color:#fff7ed;">8人 · 20%</div></div>
         </div>
         <div class="dist-row">
           <div class="dist-label">高校/政府</div>
-          <div class="dist-bar-wrap"><div class="dist-bar-fill academic" style="width:0%" data-width="8%">3人 · 8%</div></div>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill academic" style="width:0%" data-width="8%"></div><div class="dist-count" style="color:#ccfbf1;">3人 · 8%</div></div>
         </div>
       </div>
 
