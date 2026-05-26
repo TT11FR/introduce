@@ -423,6 +423,63 @@
   #people .alumni-container .alumni-year-group {
     transition:opacity .6s, transform .6s;
   }
+  /* Stats distribution bars */
+  #people .dist-card {
+    background:rgba(20,184,166,.04); border:1px solid rgba(20,184,166,.12);
+    border-radius:16px; padding:28px 32px; backdrop-filter:blur(10px);
+  }
+  #people .dist-card h3 {
+    font-size:15px; color:#ccfbf1; margin-bottom:20px; letter-spacing:2px;
+  }
+  #people .dist-row {
+    display:flex; align-items:center; gap:16px; margin-bottom:14px;
+  }
+  #people .dist-label {
+    width:120px; font-size:13px; color:#a0b0b0; text-align:right; flex-shrink:0;
+  }
+  #people .dist-bar-wrap {
+    flex:1; height:28px; background:rgba(20,184,166,.06);
+    border-radius:14px; overflow:hidden; position:relative;
+  }
+  #people .dist-bar-fill {
+    height:100%; border-radius:14px; position:relative;
+    transition:width 1.2s cubic-bezier(.4,0,.2,1);
+    display:flex; align-items:center; padding-left:14px;
+    font-size:12px; font-weight:600; letter-spacing:1px;
+  }
+  #people .dist-bar-fill.private { background:linear-gradient(90deg,rgba(59,130,246,.5),rgba(6,182,212,.6)); color:#e0f7ff; }
+  #people .dist-bar-fill.state { background:linear-gradient(90deg,rgba(245,158,11,.5),rgba(251,146,60,.6)); color:#fff7ed; }
+  #people .dist-bar-fill.academic { background:linear-gradient(90deg,rgba(16,185,129,.5),rgba(20,184,166,.6)); color:#ccfbf1; }
+  #people .dist-bar-fill.huawei { background:linear-gradient(90deg,rgba(239,68,68,.5),rgba(251,146,60,.5)); color:#fff7ed; }
+  /* Alumni type badge */
+  #people .type-dot {
+    display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:4px; vertical-align:middle;
+  }
+  #people .type-dot.private { background:#3b82f6; box-shadow:0 0 4px rgba(59,130,246,.6); }
+  #people .type-dot.state { background:#f59e0b; box-shadow:0 0 4px rgba(245,158,11,.6); }
+  #people .type-dot.academic { background:#10b981; box-shadow:0 0 4px rgba(16,185,129,.6); }
+  /* Company highlight chips */
+  #people .company-highlights {
+    display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;
+  }
+  #people .company-badge {
+    display:flex; align-items:center; gap:8px;
+    padding:10px 18px; border-radius:12px;
+    background:rgba(20,184,166,.06); border:1px solid rgba(20,184,166,.15);
+    font-size:13px; transition:all .3s;
+  }
+  #people .company-badge:hover {
+    border-color:rgba(20,184,166,.4); background:rgba(20,184,166,.12);
+    transform:translateY(-2px);
+  }
+  #people .company-badge .count {
+    font-weight:700; font-size:18px; color:#14b8a6;
+  }
+  #people .company-badge .name { color:#ccfbf1; }
+  #people .company-badge .tag {
+    font-size:10px; padding:2px 8px; border-radius:10px;
+    background:rgba(20,184,166,.15); color:#5eead4; letter-spacing:1px;
+  }
 
   /* ===== SECTION THEME: GALLERY (温馨 · Warm Amber/Rose) ===== */
   #gallery {
@@ -611,8 +668,71 @@
     </div>
   </div>
 
-  <!-- Alumni Grid -->
+  <!-- Distribution Stats -->
   <div class="alumni-container reveal" style="width:100%;max-width:1100px;margin-top:60px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;">
+      <!-- 企业性质分布 -->
+      <div class="dist-card">
+        <h3>去向单位性质分布</h3>
+        <div class="dist-row">
+          <div class="dist-label">民企/外企</div>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill private" style="width:0%" data-width="72%">29人 · 72%</div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-label">央国企/研究所</div>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill state" style="width:0%" data-width="20%">8人 · 20%</div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-label">高校/政府</div>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill academic" style="width:0%" data-width="8%">3人 · 8%</div></div>
+        </div>
+      </div>
+
+      <!-- 热门去向 -->
+      <div class="dist-card">
+        <h3>热门去向企业</h3>
+        <div class="company-highlights">
+          <div class="company-badge">
+            <span class="count">4</span><span class="name">华为</span><span class="tag">苏州/数字能源</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">3</span><span class="name">博世</span><span class="tag">无锡/苏州</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">2</span><span class="name">比亚迪</span><span class="tag">深圳</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">1</span><span class="name">特斯拉</span><span class="tag">上海</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">1</span><span class="name">蔚来</span><span class="tag">合肥</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">1</span><span class="name">吉利</span><span class="tag">宁波</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">1</span><span class="name">赛力斯</span><span class="tag">重庆</span>
+          </div>
+          <div class="company-badge">
+            <span class="count">1</span><span class="name">德赛西威</span><span class="tag">惠州</span>
+          </div>
+        </div>
+        <div style="margin-top:16px;font-size:12px;color:#809080;line-height:1.6;">
+          毕业生遍布汽车产业链核心企业，涵盖主机厂、Tier1供应商、半导体、航天军工等多个领域
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alumni Grid -->
+  <div class="alumni-container reveal" style="width:100%;max-width:1100px;margin-top:40px;">
+    <!-- Legend -->
+    <div style="display:flex;gap:24px;margin-bottom:32px;flex-wrap:wrap;align-items:center;font-size:12px;color:#a0b0b0;">
+      <span>图例：</span>
+      <span><span class="type-dot private" style="vertical-align:middle;"></span> 民企/外企</span>
+      <span><span class="type-dot state" style="vertical-align:middle;"></span> 央国企/研究所</span>
+      <span><span class="type-dot academic" style="vertical-align:middle;"></span> 高校/政府</span>
+    </div>
 
     <!-- 导师 -->
     <div class="alumni-year-group" style="margin-bottom:40px;">
@@ -637,13 +757,13 @@
           <span style="font-weight:600;color:#ccfbf1;">陈**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">重庆赛力斯</span><div style="color:#809080;font-size:11px;margin-top:2px;">底盘控制软件工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">丁**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">上海航天设备制造总厂</span><div style="color:#809080;font-size:11px;margin-top:2px;">空间驱动机构产品化工程师</div>
+          <span style="font-weight:600;color:#ccfbf1;">丁**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">上海航天设备制造总厂</span><div style="color:#809080;font-size:11px;margin-top:2px;">空间驱动机构产品化工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">张**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">特斯拉上海</span><div style="color:#809080;font-size:11px;margin-top:2px;">软件工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">刘**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">枣庄学院</span><div style="color:#809080;font-size:11px;margin-top:2px;">机电工程学院实验员</div>
+          <span style="font-weight:600;color:#ccfbf1;">刘**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot academic"></span><span style="color:#ccfbf1;">枣庄学院</span><div style="color:#809080;font-size:11px;margin-top:2px;">机电工程学院实验员</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">李**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">轻舟智航</span><div style="color:#809080;font-size:11px;margin-top:2px;">智驾规划算法工程师</div>
@@ -668,7 +788,7 @@
           <span style="font-weight:600;color:#ccfbf1;">汤**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">华为苏州研究所</span><div style="color:#809080;font-size:11px;margin-top:2px;">智能座舱通用软件开发工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">朱**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">武汉高德红外</span><div style="color:#809080;font-size:11px;margin-top:2px;">导弹总体设计师（软件）</div>
+          <span style="font-weight:600;color:#ccfbf1;">朱**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">武汉高德红外</span><div style="color:#809080;font-size:11px;margin-top:2px;">导弹总体设计师（软件）</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">王**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">安徽美芝制冷设备</span><div style="color:#809080;font-size:11px;margin-top:2px;">电机研发工程师</div>
@@ -699,7 +819,7 @@
           <span style="font-weight:600;color:#ccfbf1;">肖**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">菲尼克斯亚太电气</span><div style="color:#809080;font-size:11px;margin-top:2px;">高压连接器项目工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">郭**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">中国重汽</span><div style="color:#809080;font-size:11px;margin-top:2px;">整车电控策略开发工程师</div>
+          <span style="font-weight:600;color:#ccfbf1;">郭**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">中国重汽</span><div style="color:#809080;font-size:11px;margin-top:2px;">整车电控策略开发工程师</div>
         </div>
       </div>
     </div>
@@ -712,7 +832,7 @@
           <span style="font-weight:600;color:#ccfbf1;">陈**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">蔚来动力科技</span><div style="color:#809080;font-size:11px;margin-top:2px;">硬件工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">王**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">无锡市锡山区政府</span><div style="color:#809080;font-size:11px;margin-top:2px;">综合六科副科长</div>
+          <span style="font-weight:600;color:#ccfbf1;">王**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">无锡市锡山区政府</span><div style="color:#809080;font-size:11px;margin-top:2px;">综合六科副科长</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">胡**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">无锡博世</span><div style="color:#809080;font-size:11px;margin-top:2px;">控制器系统工程师</div>
@@ -734,7 +854,7 @@
           <span style="font-weight:600;color:#ccfbf1;">王*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">华为数字能源</span><div style="color:#809080;font-size:11px;margin-top:2px;">硬件开发工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">郝**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">兵器207所</span><div style="color:#809080;font-size:11px;margin-top:2px;">装甲火控系统研发工程师</div>
+          <span style="font-weight:600;color:#ccfbf1;">郝**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">兵器207所</span><div style="color:#809080;font-size:11px;margin-top:2px;">装甲火控系统研发工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">黄**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">斯堪尼亚研发</span><div style="color:#809080;font-size:11px;margin-top:2px;">驱动桥工程师</div>
@@ -750,13 +870,13 @@
       <div class="alumni-year-header" style="font-size:16px;font-weight:700;color:#14b8a6;margin-bottom:12px;letter-spacing:2px;border-bottom:1px solid rgba(20,184,166,.12);padding-bottom:6px;">2017 - 2020 届 <span style="font-size:12px;color:#5eead4;font-weight:400;">12人</span></div>
       <div class="alumni-list" style="display:flex;flex-wrap:wrap;gap:8px;">
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">张**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">杭州电子科技大学</span><div style="color:#809080;font-size:11px;margin-top:2px;">机械工程学院团委书记</div>
+          <span style="font-weight:600;color:#ccfbf1;">张**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot academic"></span><span style="color:#ccfbf1;">杭州电子科技大学</span><div style="color:#809080;font-size:11px;margin-top:2px;">机械工程学院团委书记</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">侯**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">上海启鸣芯半导体</span><div style="color:#809080;font-size:11px;margin-top:2px;">无线算法工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">唐*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">电子科技大学</span><div style="color:#809080;font-size:11px;margin-top:2px;">博士生</div>
+          <span style="font-weight:600;color:#ccfbf1;">唐*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot academic"></span><span style="color:#ccfbf1;">电子科技大学</span><div style="color:#809080;font-size:11px;margin-top:2px;">博士生</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">张*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">罗博网联</span><div style="color:#809080;font-size:11px;margin-top:2px;">控制算法专家</div>
@@ -778,13 +898,13 @@
       <div class="alumni-year-header" style="font-size:16px;font-weight:700;color:#14b8a6;margin-bottom:12px;letter-spacing:2px;border-bottom:1px solid rgba(20,184,166,.12);padding-bottom:6px;">往届 <span style="font-size:12px;color:#5eead4;font-weight:400;">5人</span></div>
       <div class="alumni-list" style="display:flex;flex-wrap:wrap;gap:8px;">
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">朱**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">中航光电</span><div style="color:#809080;font-size:11px;margin-top:2px;">新能源汽车事业部设计员</div>
+          <span style="font-weight:600;color:#ccfbf1;">朱**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">中航光电</span><div style="color:#809080;font-size:11px;margin-top:2px;">新能源汽车事业部设计员</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">周*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">中联中科</span><div style="color:#809080;font-size:11px;margin-top:2px;">主管电气工程师</div>
+          <span style="font-weight:600;color:#ccfbf1;">周*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">中联中科</span><div style="color:#809080;font-size:11px;margin-top:2px;">主管电气工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
-          <span style="font-weight:600;color:#ccfbf1;">张*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">中兴通讯</span><div style="color:#809080;font-size:11px;margin-top:2px;">通信协议软件开发工程师</div>
+          <span style="font-weight:600;color:#ccfbf1;">张*</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">学硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span class="type-dot state"></span><span style="color:#ccfbf1;">中兴通讯</span><div style="color:#809080;font-size:11px;margin-top:2px;">通信协议软件开发工程师</div>
         </div>
         <div class="alumni-chip" style="background:rgba(20,184,166,.04);border:1px solid rgba(20,184,166,.1);border-radius:10px;padding:12px 16px;font-size:13px;min-width:200px;flex:1;backdrop-filter:blur(6px);transition:all .3s;">
           <span style="font-weight:600;color:#ccfbf1;">朱**</span><span style="color:#5eead4;margin:0 4px;">·</span><span style="color:#a0a0b0;">专硕</span><span style="color:#5eead4;margin:0 4px;">→</span><span style="color:#ccfbf1;">泛亚汽车技术中心</span><div style="color:#809080;font-size:11px;margin-top:2px;">功能安全开发工程师</div>
@@ -1055,6 +1175,18 @@ document.querySelectorAll('.card').forEach(card => {
     card.style.transform = '';
   });
 });
+
+// ===== DISTRIBUTION BAR ANIMATION =====
+const distBars = document.querySelectorAll('.dist-bar-fill[data-width]');
+const distObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const bar = entry.target;
+    bar.style.width = bar.dataset.width;
+    distObserver.unobserve(bar);
+  });
+}, { threshold: 0.4 });
+distBars.forEach(bar => distObserver.observe(bar));
 
 // ===== SMOOTH PARALLAX FOR GLOW ORBS =====
 const glowOrbs = document.querySelectorAll('.glow-orb, .glow-orb-tech, .glow-orb-people, .glow-orb-warm');
