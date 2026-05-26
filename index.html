@@ -322,6 +322,134 @@
     background:rgba(236,72,153,.08);
   }
 
+  /* ===== SECTION THEME: RESEARCH (科技感 · Cyan/Blue) ===== */
+  #research {
+    position:relative; overflow:hidden;
+  }
+  #research::before {
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(6,182,212,.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(59,130,246,.06) 0%, transparent 60%);
+  }
+  #research .section-label { color:#06b6d4; }
+  #research .section-title {
+    background:linear-gradient(135deg,#e0f7ff,#67e8f9,#3b82f6);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  #research .section-subtitle { color:#5eead4; opacity:.8; }
+  #research .card {
+    background:rgba(6,182,212,.03); border-color:rgba(6,182,212,.08);
+  }
+  #research .card::before {
+    background:linear-gradient(90deg,transparent,rgba(6,182,212,.5),transparent);
+  }
+  #research .card:hover {
+    border-color:rgba(6,182,212,.4);
+    box-shadow:0 20px 60px rgba(6,182,212,.12),0 0 0 1px rgba(6,182,212,.12) inset;
+  }
+  #research .card-icon {
+    background:linear-gradient(135deg,rgba(6,182,212,.2),rgba(59,130,246,.1));
+  }
+  #research .card h3 { color:#e0f7ff; }
+  #research .card .card-tags span {
+    background:rgba(6,182,212,.12); color:#67e8f9;
+  }
+  /* Circuit board decoration */
+  #research::after {
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:0; opacity:.03;
+    background-image:
+      linear-gradient(rgba(6,182,212,.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6,182,212,.5) 1px, transparent 1px);
+    background-size:60px 60px;
+    mask-image:radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+  #research .glow-orb-tech {
+    position:absolute; width:500px; height:500px; top:-150px; right:-150px;
+    border-radius:50%; filter:blur(140px); pointer-events:none; z-index:0;
+    background:rgba(6,182,212,.1);
+  }
+
+  /* ===== SECTION THEME: PEOPLE (学术稳重 · Emerald/Teal) ===== */
+  #people {
+    position:relative; overflow:hidden;
+  }
+  #people::before {
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse at 80% 30%, rgba(20,184,166,.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(16,185,129,.06) 0%, transparent 60%);
+  }
+  #people .section-label { color:#14b8a6; }
+  #people .section-title {
+    background:linear-gradient(135deg,#ccfbf1,#5eead4,#14b8a6);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  #people .section-subtitle { color:#5eead4; opacity:.8; }
+  #people .timeline::before {
+    background:linear-gradient(180deg,transparent,rgba(20,184,166,.4),rgba(16,185,129,.4),transparent);
+  }
+  #people .timeline-dot {
+    background:linear-gradient(135deg,#14b8a6,#10b981);
+    box-shadow:0 0 20px rgba(20,184,166,.5);
+  }
+  #people .timeline-content {
+    background:rgba(20,184,166,.03); border-color:rgba(20,184,166,.08);
+  }
+  #people .timeline-content:hover {
+    border-color:rgba(20,184,166,.4);
+    box-shadow:0 12px 40px rgba(20,184,166,.1);
+  }
+  #people .timeline-year { color:#14b8a6; }
+  #people .stat-number {
+    background:linear-gradient(135deg,#14b8a6,#10b981);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  #people .glow-orb-people {
+    position:absolute; width:400px; height:400px; top:20%; left:-100px;
+    border-radius:50%; filter:blur(130px); pointer-events:none; z-index:0;
+    background:rgba(20,184,166,.08);
+  }
+
+  /* ===== SECTION THEME: GALLERY (温馨 · Warm Amber/Rose) ===== */
+  #gallery {
+    position:relative; overflow:hidden;
+  }
+  #gallery::before {
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse at 30% 0%, rgba(251,146,60,.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, rgba(236,72,153,.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(245,158,11,.05) 0%, transparent 70%);
+  }
+  #gallery .section-label { color:#fb923c; }
+  #gallery .section-title {
+    background:linear-gradient(135deg,#fff7ed,#fed7aa,#fb923c,#f97316);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  #gallery .section-subtitle { color:#fdba74; opacity:.9; }
+  #gallery .gallery-item {
+    box-shadow:0 4px 24px rgba(251,146,60,.06);
+  }
+  #gallery .gallery-item .img-placeholder {
+    background:linear-gradient(135deg,rgba(251,146,60,.18),rgba(236,72,153,.12));
+  }
+  #gallery .gallery-overlay {
+    background:linear-gradient(0deg,rgba(20,10,5,.92) 0%,rgba(40,15,5,.2) 40%,transparent 65%);
+  }
+  #gallery .gallery-overlay h4 { color:#fed7aa; }
+  #gallery .gallery-overlay span { color:#fdba74; }
+  #gallery .glow-orb-warm {
+    position:absolute; width:450px; height:450px; bottom:-100px; right:-100px;
+    border-radius:50%; filter:blur(140px); pointer-events:none; z-index:0;
+    background:rgba(251,146,60,.1);
+  }
+
   /* ===== MOBILE NAV ===== */
   @media (max-width:768px) {
     .nav-links {
@@ -391,6 +519,7 @@
 
 <!-- RESEARCH -->
 <section class="section" id="research">
+  <div class="glow-orb-tech"></div>
   <div class="section-label reveal">WHAT WE DO</div>
   <h2 class="section-title reveal">研究方向</h2>
   <p class="section-subtitle reveal">围绕电动车辆核心技术，六大研究方向并进</p>
@@ -448,6 +577,7 @@
 
 <!-- PEOPLE -->
 <section class="section" id="people">
+  <div class="glow-orb-people"></div>
   <div class="section-label reveal">ALUMNI &amp; TEAM</div>
   <h2 class="section-title reveal">团队成员</h2>
   <p class="section-subtitle reveal">由殷德军教授领衔，桃李遍四方</p>
@@ -495,6 +625,7 @@
 
 <!-- GALLERY -->
 <section class="section" id="gallery">
+  <div class="glow-orb-warm"></div>
   <div class="section-label reveal">OUR MOMENTS</div>
   <h2 class="section-title reveal">团建活动</h2>
   <p class="section-subtitle reveal">研途有你，温暖同行</p>
@@ -751,13 +882,33 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 // ===== SMOOTH PARALLAX FOR GLOW ORBS =====
-const glowOrbs = document.querySelectorAll('.glow-orb');
+const glowOrbs = document.querySelectorAll('.glow-orb, .glow-orb-tech, .glow-orb-people, .glow-orb-warm');
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
   glowOrbs.forEach((orb, i) => {
     const speed = (i + 1) * 0.04;
     orb.style.setProperty('--parallax', `${scrolled * speed}px`);
   });
+});
+
+// ===== NAV THEME COLOR PER SECTION =====
+const navLogo = document.querySelector('.nav-logo');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 200;
+    if (window.scrollY >= top) current = sec.getAttribute('id');
+  });
+  const themes = {
+    research: 'linear-gradient(135deg,#06b6d4,#3b82f6)',
+    people: 'linear-gradient(135deg,#14b8a6,#10b981)',
+    gallery: 'linear-gradient(135deg,#fb923c,#ec4899)',
+  };
+  const gradient = themes[current] || 'linear-gradient(135deg,#6366f1,#a855f7,#ec4899)';
+  navLogo.style.background = gradient;
+  navLogo.style.webkitBackgroundClip = 'text';
+  navLogo.style.webkitTextFillColor = 'transparent';
+  navLogo.style.backgroundClip = 'text';
 });
 </script>
 </body>
